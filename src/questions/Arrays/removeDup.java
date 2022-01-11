@@ -22,7 +22,7 @@ public class removeDup {
             l.add(sc.nextInt());
         }
         for (int i = 1; i < l.size(); i++) {
-            if(l.get(i)==l.get(i-1)) {
+            if(l.get(i).equals(l.get(i-1))) {
                 l.remove(i);
                 i--;
             }
