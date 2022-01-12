@@ -1,3 +1,9 @@
+/*
+    Q. Enter an number and calculate its factorial and count the number of trailing zeros in it.
+    Input - 5
+    factorial - 120
+    Output - 1(Trailing zero is 1 in 120).
+ */
 package questions.Arrays;
 
 import java.util.Scanner;
