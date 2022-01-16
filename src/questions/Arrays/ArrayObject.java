@@ -62,5 +62,12 @@ public class ArrayObject {
             System.out.print("Enter price : ");
             f[i].setPrice(sc.nextFloat());
         }
+        System.out.println();
+        for (int i = 0; i < f.length; i++) {
+            System.out.println("Flower "+(i+1)+" Name : "+f[i].getName());
+            System.out.println("No. of petals : "+f[i].getPetal());
+            System.out.println("Price : "+f[i].getPrice());
+            System.out.println();
+        }
     }
 }
