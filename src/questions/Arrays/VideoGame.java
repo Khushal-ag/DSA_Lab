@@ -24,6 +24,15 @@ import java.util.*;
 class GameEntry {
     private int score;
     private String name;
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public GameEntry(int score, String name) {
         this.score = score;
         this.name = name;
@@ -39,10 +48,24 @@ public class VideoGame {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        List<GameEntry> arr = new ArrayList<>();
+        GameEntry[] arr = new GameEntry[n];
         for (int i = 0; i < n; i++) {
-            GameEntry obj = new GameEntry(sc.nextInt(), sc.next());
-            arr.add(obj);
+            arr[i] = new GameEntry(sc.nextInt(), sc.next());
+        }
+        for(int i=1;i<arr.length;i++)
+        {
+            for (int j = 0; j < arr.length-1; j++) {
+                if(arr[j].getScore()>arr[j+1].getScore()){
+                    GameEntry temp = new GameEntry(arr[j].getScore(),arr[j].getName());
+                    arr[j].setScore(arr[j+1].getScore());
+                    arr[j].setName(arr[j+1].getName());
+                    arr[j+1].setScore(temp.getScore());
+                    arr[j+1].setName(temp.getName());
+                }
+            }
+        }
+        for (var i : arr) {
+            System.out.println(i.toString());
         }
 
     }
