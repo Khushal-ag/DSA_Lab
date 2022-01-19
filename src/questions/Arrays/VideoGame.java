@@ -11,7 +11,7 @@ public GameEntry(int score, String name) {
 // Getter methods that returns the name and score
 public int getScore() { return score; }
 public String getName() { return name; }
-// here i am returning a string representation of the entry
+// here I am returning a string representation of the entry
 @Override
 public String toString() {
     return "("+score + ", "+ name+ ")";
