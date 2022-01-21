@@ -26,14 +26,14 @@ public class SearchAll7 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter no. of element : ");
         int n = sc.nextInt();
-        System.out.println("Enter array -> ");
+        System.out.print("Enter array -> ");
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
         System.out.print("Enter element to Search : ");
         int x = sc.nextInt();
-        System.out.println("Indexes : ");
+        System.out.print("Indexes : ");
         for (var i:res(arr,0,x)) {
             System.out.print(i+" ");
         }
