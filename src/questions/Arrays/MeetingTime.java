@@ -19,36 +19,45 @@ public class TimeInterval
     // set of statements
     }
 }*/
-//package questions.Arrays;
-//
-//class TimeInterval {
-//    int start;
-//    int end;
-//
-//    public int getStart() {
-//        return start;
-//    }
-//
-//    public void setStart(int start) {
-//        this.start = start;
-//    }
-//
-//    public int getEnd() {
-//        return end;
-//    }
-//
-//    public void setEnd(int end) {
-//        this.end = end;
-//    }
-//
-//    public boolean canAttendMeeting(TimeInterval [ ] tlarr)
-//    {
-//        // set of statements
-//    }
-//}
-//
-//public class MeetingTime {
-//    public static void main(String[] args) {
-//
-//    }
-//}
+package questions.Arrays;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class TimeInterval {
+    int start;
+    int end;
+    public TimeInterval(int start, int end) {
+        this.start = start;
+        this.end = end;
+    }
+
+    public static boolean canAttendMeeting(TimeInterval [ ] tlarr)
+    {
+        int[] start = new int[tlarr.length];
+        int[] end = new int[tlarr.length];
+        for (int i=0;i< tlarr.length;i++) {
+            start[i] = tlarr[i].start;
+            end[i] = tlarr[i].start;
+        }
+        Arrays.sort(start);
+        Arrays.sort(end);
+        for (int i = 0; i < tlarr.length; i++) {
+            if(start[i]<=end[i]) return false;
+        }
+        return true;
+    }
+}
+
+public class MeetingTime {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        TimeInterval[] arr = new TimeInterval[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = new TimeInterval(sc.nextInt(), sc.nextInt());
+        }
+        if(TimeInterval.canAttendMeeting(arr)) System.out.println("No Clash");
+        else System.out.println("Clashing");
+    }
+}
