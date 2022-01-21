@@ -27,7 +27,8 @@ public class Search {
             arr[i] = sc.nextInt();
         }
         int x = sc.nextInt();
-        if(find(arr,0,x)>=0) System.out.println("Find at index = "+find(arr,0,x));
+        int res = find(arr,0,x);
+        if(res>=0) System.out.println("Find at index = "+res);
         else System.out.println("Not found");
     }
 }
