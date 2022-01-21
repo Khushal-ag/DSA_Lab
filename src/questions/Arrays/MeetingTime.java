@@ -19,36 +19,36 @@ public class TimeInterval
     // set of statements
     }
 }*/
-package questions.Arrays;
-
-class TimeInterval {
-    int start;
-    int end;
-
-    public int getStart() {
-        return start;
-    }
-
-    public void setStart(int start) {
-        this.start = start;
-    }
-
-    public int getEnd() {
-        return end;
-    }
-
-    public void setEnd(int end) {
-        this.end = end;
-    }
-
-    public boolean canAttendMeeting(TimeInterval [ ] tlarr)
-    {
-        // set of statements
-    }
-}
-
-public class MeetingTime {
-    public static void main(String[] args) {
-
-    }
-}
+//package questions.Arrays;
+//
+//class TimeInterval {
+//    int start;
+//    int end;
+//
+//    public int getStart() {
+//        return start;
+//    }
+//
+//    public void setStart(int start) {
+//        this.start = start;
+//    }
+//
+//    public int getEnd() {
+//        return end;
+//    }
+//
+//    public void setEnd(int end) {
+//        this.end = end;
+//    }
+//
+//    public boolean canAttendMeeting(TimeInterval [ ] tlarr)
+//    {
+//        // set of statements
+//    }
+//}
+//
+//public class MeetingTime {
+//    public static void main(String[] args) {
+//
+//    }
+//}
