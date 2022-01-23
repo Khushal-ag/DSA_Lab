@@ -26,7 +26,7 @@ public class ChildrenPlay {
         List<Integer> res = new ArrayList<>();
         int min = Integer.MAX_VALUE;
         for (int i = arr.length-1; i >= 0 ; i--) {
-            if(arr[i]<=min) res.add(arr[i]);
+            if(arr[i] < min) res.add(arr[i]);
             min = Math.min(min,arr[i]);
         }
         for (int i = res.size()-1; i >=0 ; i--) {
