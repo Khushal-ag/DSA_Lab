@@ -6,27 +6,24 @@ Sample Input :
 abaca
 a x
 Sample Output :
-xbxcd
+xbxcx
 */
 package questions.Recursion;
 
 import java.util.Scanner;
 
 public class StringReplace {
-    public static String rep(String s,int currentIndex,String c1,String c2){
-        String res = "";
-        if(currentIndex==s.length()) return res;
-        if(s.charAt(currentIndex)==c2.charAt(0)) {
-            res.concat(c2);
-            return res;
-        }
-        return res.concat(rep(s, currentIndex+1, c1, c2));
+    public static void rep(String s,int currentIndex,String c1,String c2){
+        if(currentIndex == s.length()) return;
+        if(s.charAt(currentIndex)==c1.charAt(0)) System.out.print(c2);
+        else System.out.print(s.charAt(currentIndex));
+        rep(s, currentIndex+1, c1, c2);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
         String c1 = sc.next();
         String c2 = sc.next();
-        System.out.println(rep(s,0,c1,c2));
+        rep(s,0,c1,c2);
     }
 }
