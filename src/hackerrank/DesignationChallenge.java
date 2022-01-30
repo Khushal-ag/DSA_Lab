@@ -2,7 +2,6 @@ package hackerrank;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class DesignationChallenge {
@@ -13,7 +12,7 @@ public class DesignationChallenge {
         List<String> res = new ArrayList<>();
         int c = 0;
         for (int i = 0; i < n; i++) {
-            l.add(sc.nextLine().toUpperCase(Locale.ROOT));
+            l.add(sc.nextLine().toUpperCase());
             if(l.get(i).contains("HR")){
                 c++;
                 res.add(l.get(i));
