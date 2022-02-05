@@ -9,13 +9,14 @@ public class deletion {
         private int data;
         private Node next;
 
-        public Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
-        public Node(int data) {
-            this.data = data;
-        }
+        // --NOT REQUIRED FOR THESE FUNCTION-- 
+        // public Node(int data, Node next) {
+        //     this.data = data;
+        //     this.next = next;
+        // }
+        // public Node(int data) {
+        //     this.data = data;
+        // }
     }
     public void deleteBeg(){
         if(head==null){
@@ -56,6 +57,8 @@ public class deletion {
             deleteLast();
             return;
         }
+        else if(index >= size)
+            return;
         Node temp = head;
         for (int i = 1; i < index; i++) {
             temp = temp.next;

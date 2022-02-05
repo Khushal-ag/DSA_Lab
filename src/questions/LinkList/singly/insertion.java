@@ -36,6 +36,8 @@ public class insertion {
             insertLast(data);
             return;
         }
+        else if(index >= size)
+            return;
         Node temp = head;
         for (int i=1;i<index;i++)
         {
@@ -75,7 +77,7 @@ public class insertion {
         ll.insertBeg(17);
         ll.insertLast(20);
         ll.insertLast(25);
-        ll.insertDes(30,4);
+        ll.insertDes(30,8);
         ll.insertDes(35, 0);
         ll.display();
     }
