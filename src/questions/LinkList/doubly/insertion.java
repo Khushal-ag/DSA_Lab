@@ -71,13 +71,12 @@ public class insertion {
 
     public static void main(String[] args) {
         insertion dl = new insertion();
-        dl.display();
-        dl.insertDes(12,0);
-        dl.insertDes(15,0);
+        dl.insertBeg(11);
+        dl.insertLast(14);
         dl.insertDes(13,0);
         dl.display();
-        dl.insertDes(20,2);
-        dl.insertDes(25,4);
+        dl.insertDes(15,2);
+        dl.insertLast(20);
         dl.display();
     }
 }
