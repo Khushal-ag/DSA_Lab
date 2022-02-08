@@ -42,6 +42,7 @@ public class midpoint {
     }
     public int mid()
     {
+        if(head==null) return -1;
         Node temp = head;
         int mid;
         if(size%2==0) mid = size/2 - 1;
@@ -61,7 +62,9 @@ public class midpoint {
                 if(x==-1) break;
                 ll.insertLast(x);
             }
-            System.out.println("Mid point : "+ll.mid());
+            int res = ll.mid();
+            if(ll.mid()==-1) System.out.println();
+            else System.out.println("Mid point : "+ll.mid());
             t-=1;
         }
     }
