@@ -17,4 +17,20 @@ public class sortedDuplicate {
             this.next = next;
         }
     }
+    public void insertLast(int data)
+    {
+        Node node = new Node(data,null);
+        if(head1==null){
+            head1 =  node;
+            return;
+        }
+        Node temp = head1;
+        while(temp.next!=null){
+            temp = temp.next;
+        }
+        temp.next = node;
+    }
+    public void delete(){
+
+    }
 }
