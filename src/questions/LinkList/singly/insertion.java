@@ -54,7 +54,7 @@ public class insertion {
             temp = temp.next;
         }
         System.out.println("END");
-        System.out.println("Size : " + size);
+        System.out.println("Size = " + size);
     }
     private class Node{
         private int data;
