@@ -8,7 +8,7 @@ Rearrange ([3,3,2]) -> [2,3,3]
 Rearrange(0,1,0,1,1,]) -> [0,0,1,1,1]
 */
 
-        package questions.Arrays;
+package questions.Arrays;
 
 import java.util.Scanner;
 
