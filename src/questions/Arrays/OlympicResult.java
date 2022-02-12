@@ -34,8 +34,8 @@ public class OlympicResult {
             }
             res[i] = sum;
         }
-        for (int i = 0; i < res.length; i++) {
-            System.out.println(res[i]);
+        for (int re : res) {
+            System.out.println(re);
         }
     }
 }
