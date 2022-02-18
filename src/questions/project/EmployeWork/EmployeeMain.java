@@ -19,7 +19,7 @@ public class Employee {
 }
 */
 
-package questions.project.EmployeeQueue;
+package questions.project.EmployeWork;
 
 public class EmployeeMain {
     public static void main(String[] args) {
