@@ -6,13 +6,13 @@ public class EmployeeList {
     private int size;
 
     class Node{
-        Employee ele1;
+        Employee ele;
         Node next;
 
         public Node(String name,boolean work) {
-            ele1 = new Employee();
-            ele1.setName(name);
-            ele1.setWorkingFromHome(work);
+            ele = new Employee();
+            ele.setName(name);
+            ele.setWorkingFromHome(work);
         }
     }
 
@@ -29,6 +29,14 @@ public class EmployeeList {
         tail.next = node;
         tail = node;
     }
-
+    public Employee get(int index)
+    {
+        if(index > size) return null;
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp.ele;
+    }
 
 }
