@@ -21,8 +21,32 @@ public class Employee {
 
 package questions.project.EmployeWork;
 
-public class EmployeeMain {
-    public static void main(String[] args) {
+import java.util.Scanner;
 
+public class EmployeeMain {
+    public EmployeeQueue allotWorkFromHome (EmployeeList employees, int k) {
+        EmployeeQueue q = new EmployeeQueue();
+        for (int i = 0; i < k; i++) {
+            employees.get(i).setWorkingFromHome(true);
+            q.enqueue(employees.get(i));
+        }
+        return q;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of employees = ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        EmployeeList l = new EmployeeList();
+        for (int i = 0; i < n; i++) {
+            System.out.print("Employee "+(i+1)+" name : ");
+            l.insert(sc.nextLine(), false);
+        }
+        System.out.print("Number of employee allowed to work : ");
+        int k = sc.nextInt();
+        EmployeeMain m = new EmployeeMain();
+        System.out.println();
+        System.out.println("Employee Queue : ");
+        m.allotWorkFromHome(l,k).display();
     }
 }
