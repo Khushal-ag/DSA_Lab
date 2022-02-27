@@ -21,6 +21,13 @@ public class lengthOfList {
         return size;
     }
 
+    public int recurLength(Node temp)
+    {
+        if(temp == null) return 0;
+        return 1+recurLength(temp.next);
+    }
+
+
     class Node{
         private int data;
         private Node next;
@@ -55,7 +62,8 @@ public class lengthOfList {
                 if(x==-1) break;
                 ll.insertLast(x);
             }
-            System.out.println(ll.length());
+            System.out.println("Normal length : "+ll.length());
+            System.out.println("Recursive length : "+ll.recurLength(ll.head));
             t-=1;
         }
     }
