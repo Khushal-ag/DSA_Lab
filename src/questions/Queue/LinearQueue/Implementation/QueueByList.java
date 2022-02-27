@@ -1,4 +1,4 @@
-package questions.Queue.Implementation;
+package questions.Queue.LinearQueue.Implementation;
 
 import java.util.Scanner;
 
