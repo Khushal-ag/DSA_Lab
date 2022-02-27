@@ -45,7 +45,7 @@ public class StackByArray {
             System.out.println("Stack is Empty");
             return;
         }
-        for(int i=0;i<=top;i++)
+        for(int i=top;i>=0;i--)
         {
             System.out.print(arr[i]+" ");
         }
