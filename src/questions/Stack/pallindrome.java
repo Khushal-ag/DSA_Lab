@@ -36,7 +36,6 @@ public class pallindrome {
         return res;
     }
 
-
     public int getSize() {
         return size;
     }
