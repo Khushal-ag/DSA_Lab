@@ -20,6 +20,11 @@ public class iNode {
             this.next = next;
         }
     }
+    public Node retrieve()
+    {
+        return head;
+    }
+
     public void getIndex(int index)
     {
         if(index<=size-1){
