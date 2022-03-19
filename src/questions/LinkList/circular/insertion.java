@@ -49,11 +49,11 @@ public class insertion {
 
     public static void main(String[] args) {
         insertion cq = new insertion();
-        cq.insert(21);
+        /*cq.insert(21);
         cq.insert(24);
         cq.insert(25);
         cq.display();
-        cq.insert(26);
+        cq.insert(26);*/
         cq.insert(30);
         cq.display();
     }
