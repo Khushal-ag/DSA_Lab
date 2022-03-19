@@ -36,13 +36,13 @@ public class deletion {
         }
         Node temp = head;
         do{
-            Node n = temp;
-            temp = temp.next;
-            if(temp.data == val){
-                n.next = temp.next;
-                if(tail==temp) tail=n;
+            Node n = temp.next;
+            if(n.data == val){
+                temp.next = n.next;
+                if(tail==n) tail=temp;
                 System.out.println("Deleted element : "+temp.data);
-                return;
+                temp = temp.next;
+                break;
             }
         } while(temp != head);
     }
