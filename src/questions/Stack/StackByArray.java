@@ -39,7 +39,7 @@ public class StackByArray {
         System.out.println("Deleted element : "+arr[top]);
         top--;
     }
-    public void peep()
+    public void display()
     {
         if(isEmpty()){
             System.out.println("Stack is Empty");
@@ -52,6 +52,14 @@ public class StackByArray {
         System.out.println();
     }
 
+    public void peep(){
+        if(isEmpty()){
+            System.out.println("Stack is Empty");
+            return;
+        }
+        System.out.println("Top : "+arr[top]);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
@@ -62,11 +70,10 @@ public class StackByArray {
         s.push(19);
         s.push(20);
         s.peep();
+        s.display();
         s.pop();
         s.pop();
         s.peep();
-        s.pop();
-        s.pop();
-        s.pop();
+        s.display();
     }
 }
