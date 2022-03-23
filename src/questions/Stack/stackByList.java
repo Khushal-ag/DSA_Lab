@@ -39,6 +39,15 @@ public class stackByList {
             System.out.println("Stack is empty");
             return;
         }
+        System.out.println("Top : " + top.data);
+    }
+
+    public void display()
+    {
+        if(top==null){
+            System.out.println("Stack is empty");
+            return;
+        }
         Stack temp = top;
         while (temp!=null)
         {
@@ -55,8 +64,10 @@ public class stackByList {
         ll.push(18);
         ll.push(20);
         ll.peep();
+        ll.display();
         ll.pop();
         ll.push(25);
         ll.peep();
+        ll.display();
     }
 }
