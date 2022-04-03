@@ -38,17 +38,20 @@ public class implementation {
         q.add(root);
         q.add(null);
         while (!q.isEmpty()) {
-            if (q.peek() == null) {
-                if(q.size()-1 == 0) break;
-                else {
-                    System.out.println();
+            TreeNode cur = q.poll();
+            if(cur == null){
+                if(q.isEmpty()){
+                    break;
+                }
+                else{
                     q.add(null);
+                    System.out.println();
                     continue;
                 }
             }
-            if (q.peek().right != null) q.add(q.peek().right);
-            if (q.peek().left != null) q.add(q.peek().left);
-            System.out.print(q.poll()+" ");
+            System.out.print(cur.data+" ");
+            if(cur.left != null) q.add(cur.left);
+            if(cur.right != null) q.add(cur.right);
         }
     }
     public static void main(String[] args) {
