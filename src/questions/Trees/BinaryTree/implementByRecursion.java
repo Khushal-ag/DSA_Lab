@@ -1,4 +1,4 @@
-package questions.Trees;
+package questions.Trees.BinaryTree;
 
 class TreeNode{
     int data;

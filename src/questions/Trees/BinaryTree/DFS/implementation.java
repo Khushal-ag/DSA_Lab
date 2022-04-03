@@ -1,4 +1,4 @@
-package questions.Trees.DFS;
+package questions.Trees.BinaryTree.DFS;
 
 import java.util.Scanner;
 
