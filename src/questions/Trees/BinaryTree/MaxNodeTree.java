@@ -14,6 +14,7 @@ public class MaxNodeTree {
         }
     }
     TreeNode root;
+    // Method for insertion
     public void insert(int val)
     {
         root = insertRec(root,val);
@@ -31,7 +32,7 @@ public class MaxNodeTree {
         root.right = insertRec(root.right,sc.nextInt());
         return root;
     }
-    public int calMax(TreeNode root)
+    public int calMax(TreeNode root) // function for max element
     {
         if(root == null)
             return Integer.MIN_VALUE;
