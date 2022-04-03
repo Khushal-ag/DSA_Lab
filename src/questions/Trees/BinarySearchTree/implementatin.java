@@ -20,8 +20,10 @@ public class implementatin {
     }
     public TreeNode insertRec(TreeNode root,int data)
     {
-        if(root == null)
+        if(root == null){
+            root = new TreeNode(data);
             return root;
+        }
         else if(data< root.data)
             root.left = insertRec(root.left,data);
         else if(data> root.data)
@@ -62,25 +64,35 @@ public class implementatin {
     }
     // 3. Searching
     public static void search(TreeNode root, TreeNode prev, int val){
+        if(root == null) return;
+
         if(root.data == val){
             if(prime(val)==true) System.out.println("It is prime");
             else System.out.println("It is not prime");
-            if(root.data==prev.left.data) System.out.println("Left Node of "+prev.data);
+            if(prev == null) System.out.println("It is Root Node");
+            else if(root.data==prev.left.data) System.out.println("Left Node of "+prev.data);
             else if(root.data==prev.right.data) System.out.println("Right Node of "+prev.data);
+            return;
         }
         search(root.left,root,val);
-        search(root.left,root,val);
+        search(root.right,root,val);
     }
-
+    // 4. Sum of nodes
+    public static int sum(TreeNode root)
+    {
+        if(root==null) return 0;
+        return root.data+sum(root.left)+sum(root.right);
+    }
     public static void main(String[] args) {
         implementatin obj = new implementatin();
         Scanner sc = new Scanner(System.in);
         int x;
         do {
-            System.out.println("1. Insertion");
+            System.out.println("\n1. Insertion");
             System.out.println("2. Transversal");
             System.out.println("3. Searching");
-            System.out.println("4. Exit");
+            System.out.println("4. Sum of all Nodes");
+            System.out.println("5. Exit");
             System.out.print("\nEnter Choice -> ");
             x = sc.nextInt();
             switch (x) {
@@ -98,10 +110,12 @@ public class implementatin {
                     System.out.println();
                     break;
                 case 3:
-                    System.out.println("Enter value to search : ");
-                    search(obj.root,obj.root,sc.nextInt());
+                    System.out.print("Enter value to search : ");
+                    search(obj.root,null,sc.nextInt());
                     break;
+                case 4 :
+                    System.out.println("Sum : "+sum(obj.root));
             }
-        } while (x != 4);
+        } while (x != 5);
     }
 }
