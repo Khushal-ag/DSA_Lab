@@ -31,7 +31,7 @@ public class MinNodeTree {
         root.right = insertRec(root.right,sc.nextInt());
         return root;
     }
-    public int calMin(TreeNode root)
+    public int calMin(TreeNode root) // function for min element
     {
         if(root == null)
             return Integer.MAX_VALUE;
