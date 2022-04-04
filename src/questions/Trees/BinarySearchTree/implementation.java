@@ -68,7 +68,7 @@ public class implementation {
         if (root == null) return;
 
         if (root.data == val) {
-            if (prime(val) == true) System.out.println("It is prime");
+            if (prime(val)) System.out.println("It is prime");
             else System.out.println("It is not prime");
             if (prev == null) System.out.println("It is Root Node");
             else if (root.data == prev.left.data) System.out.println("Left Node of " + prev.data);
@@ -76,7 +76,7 @@ public class implementation {
             return;
         }
         if(root.data > val) search(root.left, root, val);
-        else if(root.data < val) search(root.right, root, val);
+        else search(root.right, root, val);
     }
 
     // 4. Sum of nodes
@@ -98,11 +98,11 @@ public class implementation {
             System.out.print("\nEnter Choice -> ");
             x = sc.nextInt();
             switch (x) {
-                case 1:
+                case 1 -> {
                     System.out.print("Enter data : ");
                     obj.insert(sc.nextInt());
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.print("\nPreOrder -> ");
                     obj.preOrder(obj.root);
                     System.out.print("\nInOrder -> ");
@@ -110,13 +110,12 @@ public class implementation {
                     System.out.print("\nPostOrder -> ");
                     obj.postOrder(obj.root);
                     System.out.println();
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     System.out.print("Enter value to search : ");
                     search(obj.root, null, sc.nextInt());
-                    break;
-                case 4:
-                    System.out.println("Sum : " + sum(obj.root));
+                }
+                case 4 -> System.out.println("Sum : " + sum(obj.root));
             }
         } while (x != 5);
     }
