@@ -2,89 +2,91 @@ package questions.Trees.BinarySearchTree;
 
 import java.util.Scanner;
 
-class TreeNode{
-    int data;
-    TreeNode right;
-    TreeNode left;
-    TreeNode(int data){
-        this.data=data;
-        right=left=null;
-    }
-}
+public class implementation {
+    class TreeNode {
+        int data;
+        TreeNode left, right;
 
-public class implementatin {
-    TreeNode root;
-    // 1. Insertion
-    public void insert(int data){
-        root = insertRec(root,data);
+        public TreeNode(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
-    public TreeNode insertRec(TreeNode root,int data)
-    {
-        if(root == null){
+
+    TreeNode root;
+
+    // 1. Insertion
+    public void insert(int data) {
+        root = insertRec(root, data);
+    }
+
+    public TreeNode insertRec(TreeNode root, int data) {
+        if (root == null) {
             root = new TreeNode(data);
             return root;
-        }
-        else if(data< root.data)
-            root.left = insertRec(root.left,data);
-        else if(data> root.data)
-            root.right = insertRec(root.right,data);
+        } else if (data < root.data)
+            root.left = insertRec(root.left, data);
+        else if (data > root.data)
+            root.right = insertRec(root.right, data);
         return root;
     }
-    // 2. Traversal
-    public void preOrder(TreeNode node)
-    {
-        if(node == null) return;
 
-        System.out.print(node.data+" ");
+    // 2. Traversal
+    public void preOrder(TreeNode node) {
+        if (node == null) return;
+
+        System.out.print(node.data + " ");
         preOrder(node.left);
         preOrder(node.right);
     }
-    public void inOrder(TreeNode node)
-    {
-        if(node == null) return;
+
+    public void inOrder(TreeNode node) {
+        if (node == null) return;
 
         inOrder(node.left);
-        System.out.print(node.data+" ");
+        System.out.print(node.data + " ");
         inOrder(node.right);
     }
-    public void postOrder(TreeNode node)
-    {
-        if(node == null) return;
+
+    public void postOrder(TreeNode node) {
+        if (node == null) return;
 
         postOrder(node.left);
         postOrder(node.right);
-        System.out.print(node.data+" ");
+        System.out.print(node.data + " ");
     }
-    public static boolean prime(int val){
-        for(int i=2;i<=Math.sqrt(val);i++)
-        {
-            if(val%i ==0) return false;
+
+    public static boolean prime(int val) {
+        for (int i = 2; i <= Math.sqrt(val); i++) {
+            if (val % i == 0) return false;
         }
         return true;
     }
-    // 3. Searching
-    public static void search(TreeNode root, TreeNode prev, int val){
-        if(root == null) return;
 
-        if(root.data == val){
-            if(prime(val)==true) System.out.println("It is prime");
+    // 3. Searching
+    public static void search(TreeNode root, TreeNode prev, int val) {
+        if (root == null) return;
+
+        if (root.data == val) {
+            if (prime(val) == true) System.out.println("It is prime");
             else System.out.println("It is not prime");
-            if(prev == null) System.out.println("It is Root Node");
-            else if(root.data==prev.left.data) System.out.println("Left Node of "+prev.data);
-            else if(root.data==prev.right.data) System.out.println("Right Node of "+prev.data);
+            if (prev == null) System.out.println("It is Root Node");
+            else if (root.data == prev.left.data) System.out.println("Left Node of " + prev.data);
+            else if (root.data == prev.right.data) System.out.println("Right Node of " + prev.data);
             return;
         }
-        search(root.left,root,val);
-        search(root.right,root,val);
+        if(root.data > val) search(root.left, root, val);
+        else if(root.data < val) search(root.right, root, val);
     }
+
     // 4. Sum of nodes
-    public static int sum(TreeNode root)
-    {
-        if(root==null) return 0;
-        return root.data+sum(root.left)+sum(root.right);
+    public static int sum(TreeNode root) {
+        if (root == null) return 0;
+        return root.data + sum(root.left) + sum(root.right);
     }
+
     public static void main(String[] args) {
-        implementatin obj = new implementatin();
+        implementation obj = new implementation();
         Scanner sc = new Scanner(System.in);
         int x;
         do {
@@ -111,11 +113,12 @@ public class implementatin {
                     break;
                 case 3:
                     System.out.print("Enter value to search : ");
-                    search(obj.root,null,sc.nextInt());
+                    search(obj.root, null, sc.nextInt());
                     break;
-                case 4 :
-                    System.out.println("Sum : "+sum(obj.root));
+                case 4:
+                    System.out.println("Sum : " + sum(obj.root));
             }
         } while (x != 5);
     }
 }
+
