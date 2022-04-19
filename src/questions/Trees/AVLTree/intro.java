@@ -25,5 +25,4 @@ package questions.Trees.AVLTree;
 
 public class intro {
     // create AVL tree
-
-}
+    }
