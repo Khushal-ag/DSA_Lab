@@ -33,8 +33,8 @@ public class PrintBetweenRange {
     {
         if(root == null) return;
         if(root.data >= n1 && root.data <= n2) System.out.println(root.data + " ");
-        else if(root.data < n1) PrintRange(root.right,n1,n2);
-        else PrintRange(root.left,n1,n2);
+        PrintRange(root.right,n1,n2);
+        PrintRange(root.left,n1,n2);
     }
 
     public static void main(String[] args) {
