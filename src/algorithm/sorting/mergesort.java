@@ -1,51 +1,57 @@
 package algorithm.sorting;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class mergesort {
-    public void merge(int[] a,int l,int m,int r)
-    {
-        int l_size = m-l+2;
-        int r_size = r-m+1;
-
-        int[] left = new int[l_size];
-        int[] right = new int[r_size];
-
-        for(int i = l;i< left.length;i++)
-            left[i] = a[l+i];
-        for (int i = m+1; i < right.length;i++)
-            right[i] = a[m+1+i];
-        left[left.length] = right[right.length] = Integer.MAX_VALUE;
-        int lc = 0;int rc = 0;
-        for(int i=0;i<a.length;i++)
+    public static int[] merge(int first[], int second[]) {
+        int[] mix = new int[first.length + second.length];
+        int i=0,j=0,k=0;
+        while(i<first.length && j<second.length)
         {
-            if(left[lc]<right[rc]){
-                a[i] = left[lc];
-                lc++;
+            if(first[i]<second[j])
+            {
+                mix[k] = first[i];
+                i++;
             }
             else{
-                a[i] = right[rc];
-                rc++;
+                mix[k] = second[j];
+                j++;
             }
+            k++;
         }
+        while(i< first.length)
+        {
+            mix[k] = first[i];
+            i++;
+            k++;
+        }
+
+        while(j< second.length)
+        {
+            mix[k] = second[j];
+            j++;
+            k++;
+        }
+        return mix;
     }
-    public void mergesort(int []arr,int l,int r){
-        if(l == r) return;
-        int m = l+r-1/2;
-        mergesort(arr,l,m);
-        mergesort(arr,m+1,r);
-        merge(arr,l,m,r );
+    public static int[] mergesorting ( int[] arr){
+        int mid = arr.length / 2;
+        if (arr.length == 1) return arr;
+        int[] left = mergesorting(Arrays.copyOfRange(arr, 0, mid));
+        int[] right = mergesorting(Arrays.copyOfRange(arr, mid, arr.length));
+        return merge(left, right);
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] arr = new int[n];
+        int [] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        mergesort obj = new mergesort();
-        obj.mergesort(arr,0,arr.length-1);
-        for(var i:arr){
+        arr = mergesorting(arr);
+        for (var i: arr) {
             System.out.print(i+" ");
         }
     }
