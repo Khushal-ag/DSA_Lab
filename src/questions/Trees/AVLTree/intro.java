@@ -10,7 +10,7 @@
     * 2. right rotation(LL rotation) :- right subtree is bigger than left subtree
     * double rotation :-
     * 1. left-right rotation(LR) :-It is a sequence of single left rotation followed by a single right rotation.
-    * 2. right-left rotation :- It is a sequence of single right rotation followed by a single left rotation.
+    * 2. right-left rotation(RL) :- It is a sequence of single right rotation followed by a single left rotation.
 
     * AVLNode{
     * int data;
