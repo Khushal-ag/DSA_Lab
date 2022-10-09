@@ -1,5 +1,5 @@
 
-package questions.Queue;
+package questions.Queue.LinearQueue;
 
 import java.util.Scanner;
 

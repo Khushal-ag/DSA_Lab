@@ -3,7 +3,7 @@ package questions.Trees.BinarySearchTree;
 import java.util.Scanner;
 
 public class implementation {
-    class TreeNode {
+    static class TreeNode {
         int data;
         TreeNode left, right;
 

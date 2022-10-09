@@ -2,7 +2,7 @@
 Add the pair of vair of values having max and min products from the
 array entered by user and display it.
 */
-package questions.Queue;
+package questions.Queue.LinearQueue;
 
 import java.util.Scanner;
 

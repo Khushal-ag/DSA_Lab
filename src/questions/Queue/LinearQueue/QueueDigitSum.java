@@ -2,7 +2,7 @@
 Digit sum referred to as 123 -> (1+2+3)+(2+3)+(3)
 Take input as command line argument.
 */
-package questions.Queue;
+package questions.Queue.LinearQueue;
 
 public class QueueDigitSum {
     private Node front,rear;
